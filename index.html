@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="./sass/main.scss" /> -->
+    <link rel="stylesheet" href="./css/main.min.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <nav class="header__nav">
+                <a href="https://soken.io/" class="header__link"> <img class="header-link__img" src="./images/Logo-s.png" alt=""></a>
+            </nav>
+        </div>
+       
+    </header>
+    <main>
+
+        <section class="hero section">
+           
+            <div class="container hero__container">
+                <!-- <img class="hero__png" src="./images/ShapeSoken.png" alt=""> -->
+                <h1 class="hero-part1__title">SMART CONTRACT <br> <span class="hero-part2__title">SECURITY AUDIT</span> </h1>
+                <h2 class="hero-projekt__name">Masrelic</h2>
+                
+                <p class="hero__github">Scan and check this report <br>was posted at Soken Github</p>
+                <img class="hero-github__qr" src="./images/qrcode-Masrelic.png" alt="">
+                <p class="hero__date">August, 2022</p>
+                <div class="hero-web__fiex">
+                    <p class="hero__web">Website:</p> <a class="hero-web__link" href="https://soken.io/">soken.io</a>
+                </div>
+                
+                
+            </div>
+
+        </section>
+        <!-- <section class="Contents">
+            <div class="container">
+                <h2>Table of Contents</h2>
+                <ul>
+                    <li>Table of Contents	2</li>
+                    <li>Disclaimer	3</li>
+                    <li>Procedure	4</li>
+                    <li>Terminology	5</li>
+                    <li>Limitations	5</li>
+                    <li>Basic Security Recommendation	5</li>
+                    <li>Token Contract Details for 24.08.2022	6</li>
+                    <li>Audit Details	6</li>
+                    <li>Social Profiles	7</li>
+                    <li>Token Analytics	7</li>
+                    <li>RELIC Token Distribution	8</li>
+                    <li>Project Website Overview	9</li>
+                    <li>Project Website SSL Certification	9</li>
+                    <li>Project Website Optimization for Desktop	10</li>
+                    <li>Project Website Optimization for Mobile	10</li>
+                    <li>Whitepaper of the project	11</li>
+                    <li>Vulnerabilities checking	12</li>
+                    <li>Security Issues	13</li>
+                    <li>Conclusion	15</li>
+                    <li>Soken Contact Info	16</li>
+                </ul>
+            </div>
+
+        </section> -->
+        <section class="disclaimer section">
+            <div class="container">
+                <h2 class="disclaimer__title title">Disclaimer</h2>
+                <p class="disclaimer__text text">
+                    This is a comprehensive report based on our automated and manual examination of cybersecurity vulnerabilities and framework flaws. We took into consideration smart contract based algorithms, as well.  Reading the full analysis report is essential to build your understanding of project’s security level. It is crucial to take note, though we have done our best to perform this analysis and report, that you should not rely on the our research and cannot claim what it states or how we created it. Before making any judgments, you have to conduct your own independent research.  We will discuss this in more depth in the following disclaimer - please read it fully. 
+                </p>
+                <p class="disclaimer__text text">
+                    <span> DISCLAIMER:</span> You agree to the terms of this disclaimer by reading this report or any portion thereof. Please stop reading this report and remove and delete any copies of this report that you download and/or print if you do not agree to these conditions. This report is for non-reliability information only and does not represent investment advice. No one shall be entitled to depend on the report or its contents, and Soken and its affiliates shall not be held responsible to you or anyone else, nor shall Soken provide any guarantee or representation to any person with regard to the accuracy or integrity of the report. Without any terms, warranties or other conditions other than as set forth in that exclusion and Soken excludes hereby all representations, warrants, conditions and other terms (including, without limitation, guarantees implied by the law of satisfactory quality, fitness for purposes and the use of reasonable care and skills). The report is provided as "as is" and does not contain any terms and conditions. Except as legally banned, Soken disclaims all responsibility and responsibilities and no claim against Soken is made to any amount or type of loss or damages (without limitation, direct, indirect, special, punitive, consequential or pure economic loses or losses) that may be caused by you or any other person, or any damages or damages, including without limitations (whether innocent or negligent).
+                </p>
+                <p class="disclaimer__text text">
+                    Security analysis is based only on the smart contracts. No applications or operations were reviewed for security. No product code has been reviewed.
+                </p>
+                
+            </div>
+
+        </section>
+        <section class="procedure section">
+            <div class="container">
+                <h2 class="procedure__title title">Procedure</h2>
+                <h3 class="procedure__subtitle subtitle">Our analysis contains following steps:</h3>
+                <ul class="procedure__list list">
+                    <li class="procedure__item">1. Project Analysis;</li>
+                    <li class="procedure__item">2. Manual analysis of smart contracts:
+                        <ul class="procedure__subitem"> 
+                            <li >Deploying smart contracts on any of the network(Ropsten/Rinkeby) using Remix IDE</li>
+                            <li>Hashes of all transaction will be recorded</li>
+                            <li>Behaviour of functions and gas consumption is noted, as well.</li>
+                        </ul>
+                    </li>
+                    <li class="procedure__item">3. Unit Testing:
+                        <ul class="procedure__subitem">
+                            <li>Smart contract functions will be unit tested on multiple parameters and under multiple conditions to ensure that all paths of functions are functioning as intended. </li>
+                            <li>In this phase intended behaviour of smart contract is verified.</li>
+                            <li>In this phase, we would also ensure that smart contract functions are not consuming unnecessary gas.</li>
+                            <li>Gas limits of functions will be verified in this stage.</li>
+                        </ul>
+                    </li>
+                    <li class="procedure__item">4. Automated Testing:
+                        <ul class="procedure__subitem">
+                            <li>Mythril</li>
+                            <li>Oyente</li>
+                            <li>Manticore</li>
+                            <li>Solgraph</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="terminology section">
+            <div class="container">
+                <h2 class="terminology__title title">Terminology</h2>
+                <h3 class="terminology__subtitle subtitle">We categorize the finding into 4 categories based on their vulnerability:</h3>
+                <ul class="terminology__list">
+                    <li class="terminology__item">Low-severity issue — less important, must be analyzed</li>
+                    <li class="terminology__item">Medium-severity issue — important, needs to be analyzed and fixed</li>
+                    <li class="terminology__item">High-severity issue —important, might cause vulnerabilities, must be analyzed and fixed</li>
+                    <li class="terminology__item">Critical-severity issue —serious bug causes, must be analyzed and fixed.</li>
+                </ul>
+            </div>
+
+        </section>
+        <section class="limitations section">
+            <div class="container">
+                <h2 class="limitations__title title">Limitations</h2>
+                <p class="limitations__text text">The security audit of Smart Contract cannot cover all vulnerabilities. Even if no vulnerabilities are detected in the audit, there is no guarantee that future smart contracts are safe. Smart contracts are in most cases safeguarded against specific sorts of attacks. In order to find as many flaws as possible, we carried out a comprehensive smart contract audit. Audit is a document that is not legally binding and guarantees nothing. </p>
+            </div>
+        </section>
+        <section class="recommendation section">
+            <div class="container">
+                <h2 class="recommendation__title title">Basic Security Recommendation</h2>
+                <p class="recommendation__text text">Unlike hardware and paper wallets, hot wallets are connected to the internet and store private keys online, which exposes them to greater risk. If a company or an individual holds significant amounts of cryptocurrency in a hot wallet, they should consider using MultiSig addresses. Wallet security is enhanced when private keys are stored in different locations and are not controlled by a single entity. </p>
+                <div class="recommendation__flex">
+                    <p class="recommendation__web text" >More info: </p> <a class="recommendation__link" href="https://medium.com/coinmonks/guide-to-using-the-gnosis-multisig-wallet-eth-e76979741162 ">https://medium.com/coinmonks/guide-to-using-the-gnosis-multisig-wallet-eth-e76979741162 </a>
+                </div>
+            </div>
+        </section>
+        <section class="details section">
+            <div class="container">
+                <h2 class="details__title title">Token Contract Details for 24.08.2022</h2>
+                <ul class="details__list list text">
+                    <li class="details__item ">Contract Name: <span class="detals__data">MasRelic</span></li>
+                    <li class="details__item">Deployed address: <span class="detals__data">0x77132Bb08B02a7a87732ec289EFaB45edF49884F</span></li>
+                    <li class="details__item">Total Supply: <span class="detals__data">1,000,000,000</span></li>
+                    <li class="details__item">Token Tracker: <span class="detals__data">RELIC</span></li>
+                    <li class="details__item">Decimals: <span class="detals__data">18</span></li>
+                    <li class="details__item">Token holders: <span class="detals__data">61</span></li>
+                    <li class="details__item">Transactions count: <span class="detals__data">1410</span></li>
+                    <li class="details__item">Top 100 holders dominance: <span class="detals__data">100.00%</span></li>
+                </ul>
+            </div>
+        </section>
+        <section class="audit-details section">
+            <div class="container">
+                <h2 class="audit-details__title title">Audit Details</h2>
+                <ul class="audit-details__list list">
+                    <li class="audit-details__item"> <img class="audit-details__img" src="./images/masrelic-udit-details.jpg" alt=""></li>
+                    <li class="audit-details__item">Project Name: <span class="audit-details__data">Masrelic</span></li>
+                    <li class="audit-details__item">Language: <span class="audit-details__data" >Solidity</span></li>
+                    <li class="audit-details__item">Compiler Version: <span class="audit-details__data">v0.8.10</span></li>
+                    <li class="audit-details__item">Blockchain: <span class="audit-details__data">Ethereum</span></li>
+                </ul>
+            </div>
+        </section>
+        <section class="social section">
+            <div class="container">
+                <h2 class="social__title title">Social Profiles</h2>
+                <ul class="social__list list text">
+                    <li class="social-list__item">Project Website: <a class="social-list__link" href="https://www.masrelic.com/">https://www.masrelic.com/</a></li>
+                    <li class="social-list__item">Project Twitter: <a  class="social-list__link" href="https://twitter.com/MasRelic">https://twitter.com/MasRelic</a></li>
+                    <li class="social-list__item"> Project Telegram: <a class="social-list__link" href="https://t.me/MasRelic_EN">https://t.me/MasRelic_EN</a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="token-analytics section">
+            <div class="container">
+                <h2 class="token-analytics__title title">Token Analytics</h2>
+                <img class="token-analytics__img" src="./images/Analytics.png" alt="">
+            </div>
+        </section>
+        <section class="token-distribution section" >
+            <div class="container">
+                <h2 class="token-distribution__title title">RELIC Token Distribution</h2>
+                <img class="token-distribution__img" src="./images/Distribution.png" alt="">
+            </div>
+        </section>
+        <section class="holders section">
+            <div class="container">
+                <h2 class="holders__title title">RELIC Top 10 Holders</h2>
+                <img class="holders__img" src="./images/holders.png" alt="">
+            </div>
+        </section>
+        <section class="website-overview section">
+            <div class="container">
+                <h2 class="website-overview__title title">Project Website Overview</h2>
+                <img class="website-overview__img" src="./images/website-overview.png" alt="">
+                <ul class="website-overview__list list text">
+                    <li class="website-overview__item"> 
+                        <svg class="" width="15" height="15">
+                        <use href="./icons.svg/symbol-defs.svg#icon-checkbox"></use>
+                        </svg> JavaScript errors hasn’t been found.
+                    </li>
+                    <li class="website-overview__item">
+                        <svg class="" width="15" height="15">
+                            <use href="./icons.svg/symbol-defs.svg#icon-checkbox"></use>
+                        </svg>
+                        Malware pop-up windows hasn’t been detected.
+                    </li>
+                    <li class="website-overview__item">
+                        <svg class="icon-list__icon" width="15" height="15">
+                            <use href="./icons.svg/symbol-defs.svg#icon-checkbox"></use>
+                        </svg>
+                        No issues with loading elements, code, or stylesheets.
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="website-certification section">
+            <div class="container">
+                <h2 class="website-certification__title title">Project Website SSL Certification</h2>
+                <img class="website-certification__img" src="./images/SSL-Certification.png" alt="">
+            </div>
+        </section>
+        <section class="website-desktop section">
+            <div class="container">
+                <h2 class="website-desktop__title title">Project Website Optimization for Desktop</h2>
+                <img class="website-desktop__img" src="./images/Website-Optimization.png" alt="">
+            </div>
+        </section>
+        <section class="website-desktop__mob section">
+            <div class="container">
+                <h2 class="website-desktop__title title">Project Website Optimization for Mobile</h2>
+                <img class="website-desktop__img" src="./images/Mobile.png" alt="">
+            </div>
+        </section>
+        <section class="wp section">
+            <div class="container">
+                <h2 class="wp__title title">Whitepaper of the project</h2>
+                <p class="wp__text text">The whitepaper of Masrelic project has been verified on behalf of Soken team.</p>
+               
+                <img class="wp__img" src="./images/Whitepaper.png" alt="">
+                <a class="wp__link" href="https://www.masrelic.com/assets/Masrelic-PDF_LightPaper.pdf">Whitepaper link</a>
+            </div>
+        </section>
+        <section class="function section">
+            <div class="container">
+                <h2 class="function__title title">Contract Function Details</h2>
+                <ul class="function__list">
+                    <li class="function__item"> <span class="function__int int">[Int]</span> _msgSender</li>
+                    <li class="function__item"><span class="function__int int">[Int]</span> _msgData</li>
+                    <li class="function__item"><span class="function__pub pub">[Pub]</span> owner</li>
+                    <li class="function__item"><span class="function__pub pub">[Pub]</span> renounceOwnership</li>
+                    <li class="function__item"><span class="function__pub pub">[Pub]</span> transferOwnership</li>
+                    <li class="function__item"><span class="function__int int">[Int]</span> _transferOwnership</li>
+                    <li class="function__item"><span class="function__ext ext">[Ext]</span> totalSupply</li>
+                    <li class="function__item"><span class="function__ext ext">[Ext]</span>decimals</li>
+                    <li class="function__item"><span class="function__ext ext">[Ext]</span>symbol</li>
+                    <li class="function__item"><span class="function__ext ext">[Ext]</span>name</li>
+                    <li class="function__item"><span class="function__ext ext">[Ext]</span>getOwner</li>
+                    <li class="function__item"><span class="function__ext ext">[Ext]</span>balanceOf</li>
+                    <li class="function__item"><span class="function__ext ext">[Ext]</span>transfer</li>
+                    <li class="function__item"><span class="function__ext ext">[Ext]</span>allowance</li>
+                    <li class="function__item"><span class="function__ext ext">[Ext]</span>approve</li>
+                    <li class="function__item"><span class="function__ext ext">[Ext]</span>transferFrom</li>
+                    <li class="function__item"> <span class="function__int int">[Int]</span>add</li>
+                    <li class="function__item"> <span class="function__int int">[Int]</span>sub</li>
+                    <li class="function__item"> <span class="function__int int">[Int]</span>sub</li>
+                    <li class="function__item"> <span class="function__int int">[Int]</span>mul</li>
+                    <li class="function__item"> <span class="function__int int">[Int]</span>div</li>
+                    <li class="function__item"> <span class="function__int int">[Int]</span>div</li>
+                    <li class="function__item"> <span class="function__int int">[Int]</span>mod</li>
+                    <li class="function__item"> <span class="function__int int">[Int]</span>mod</li>
+                    <li class="function__item"> <span class="function__int int">[Int]</span>min</li>
+                    <li class="function__item"> <span class="function__int int">[Int]</span>sqrt</li>
+                    <li class="function__item"> <span class="function__int int">[Int]</span>isContract</li>
+                    <li class="function__item"> <span class="function__int int">[Int]</span>sendValue</li>
+                    <li class="function__item"> <span class="function__int int">[Int]</span>functionCall</li>
+                    <li class="function__item"> <span class="function__int int">[Int]</span>functionCall</li>
+                    <li class="function__item"> <span class="function__int int">[Int]</span>functionCallWithValue</li>
+                    <li class="function__item"> <span class="function__int int">[Int]</span>functionCallWithValue</li>
+                    <li class="function__item"><span class="function__prv prv">[Prv]</span>_functionCallWithValue</li>
+                    <li class="function__item"><span class="function__ext ext">[Ext]</span>getOwner</li>
+                    
+                </ul>
+            </div>
+        </section>
+        <section class="vulnerabilities section">
+            <div class="container">
+                <h2 class="vulnerabilities__title title">Vulnerabilities checking</h2>
+                <table class="vulnerabilities__table text">
+                    
+                        <tr class="vulnerabilities-table__subtitle">
+                            <th>Issue Description</th>
+                            <th>Checking Status</th>
+                        </tr>
+                        <tr class="vulnerabilities-table__line">
+                            <td>Compiler Errors</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr class="vulnerabilities-table2__line">
+                            <td>Delays in Data Delivery</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr class="vulnerabilities-table__line">
+                            <td>Re-entrancy</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr class="vulnerabilities-table2__line">
+                            <td>Transaction-Ordering Dependence</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr class="vulnerabilities-table__line">
+                            <td>Timestamp Dependence</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr class="vulnerabilities-table2__line">
+                            <td>Shadowing State Variables</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr class="vulnerabilities-table__line">
+                            <td>DoS with Failed Call</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr class="vulnerabilities-table2__line">
+                            <td>DoS with Block Gas Limit</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr class="vulnerabilities-table__line">
+                            <td>Outdated Complier Version</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr class="vulnerabilities-table2__line">
+                            <td>Assert Violation</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr class="vulnerabilities-table__line">
+                            <td>Use of Deprecated Solidity Functions</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr class="vulnerabilities-table2__line">
+                            <td>Integer Overflow and Underflow</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr class="vulnerabilities-table__line">
+                            <td>Function Default Visibility</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr class="vulnerabilities-table2__line">
+                            <td>Malicious Event Log</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr class="vulnerabilities-table__line">
+                            <td>Math Accuracy</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr class="vulnerabilities-table2__line">
+                            <td>Design Logic</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr class="vulnerabilities-table__line">
+                            <td>Fallback Function Security</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr class="vulnerabilities-table2__line">
+                            <td>Cross-function Race Conditions</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr class="vulnerabilities-table__line">
+                            <td>Safe Zeppelin Module</td>
+                            <td>Completed</td>
+                        </tr>
+                    
+
+                </table>
+
+            </div>
+        </section>
+        
+        <!-- <section class="vulnerabilities section">
+            <div class="container">
+                <h2 class="vulnerabilities__title title">Vulnerabilities checking</h2>
+                <div class="vulnerabilities__table">
+                    <ul class="vulnerabilities__list list">
+                        <li>Issue Description</li>
+                        <li>Compiler Errors</li>
+                        <li>Delays in Data Delivery</li>
+                        <li>Re-entrancy</li>
+                        <li>Transaction-Ordering Dependence</li>
+                        <li>Timestamp Dependence</li>
+                        <li>Shadowing State Variables</li>
+                        <li>DoS with Failed Call</li>
+                        <li>DoS with Block Gas Limit</li>
+                        <li>Outdated Complier Version</li>
+                        <li>Assert Violation</li>
+                        <li>Use of Deprecated Solidity Functions</li>
+                        <li>Integer Overflow and Underflow</li>
+                        <li>Function Default Visibility</li>
+                        <li>Malicious Event Log</li>
+                        <li>Math Accuracy</li>
+                        <li>Design Logic</li>
+                        <li>Fallback Function Security</li>
+                        <li>Cross-function Race Conditions</li>
+                        <li>Safe Zeppelin Module</li>
+                    </ul>
+                    <ul class="vulnerabilities__list list">
+                        <li>Checking Status</li>
+                        <li>Completed </li>
+                        <li>Completed </li>
+                        <li>Completed </li>
+                        <li>Completed </li>
+                        <li>Completed </li>
+                        <li>Completed </li>
+                        <li>Completed </li>
+                        <li>Completed </li>
+                        <li>Completed </li>
+                        <li>Completed </li>
+                        <li>Completed </li>
+                        <li>Completed </li>
+                        <li>Completed </li>
+                        <li>Completed </li>
+                        <li>Completed </li>
+                        <li>Completed </li>
+                        <li>Completed </li>
+                        <li>Completed </li>
+                        <li>Completed </li>
+                        <li>Completed </li>
+                    </ul>
+                </div>
+            </div>
+        </section> -->
+        <section class="security section">
+            <div class="container">
+                <h2 class="security__title title">Security Issues</h2>
+                <ul class="security__list list">
+                    <li class="security__item"> 
+                        <h3 class="security__subtitle subtitle">1) Volatile Code:</h3>
+                        <p class="security__text text">The return values of functions swapExactTokensForETHSupportingFeeOnTransferTokens and addLiquidityETH are not properly handled. </p>
+                        <h3 class="security__subtitle subtitle">Recommendation:</h3>
+                        <p class="security__text text">We recommend using variables to receive the return value of the functions mentioned above and handle both success and failure cases if needed by the business logic.</p>
+                    </li>
+                    <li>
+                        <h3>Out of Gas issue:</h3>
+                        <img src="./images/Gas-issue.png" alt="">
+                        <p>The function includeInRewards() uses the loop to find and remove
+                            addresses from the _excluded list. Function will be aborted with
+                            OUT_OF_GAS exception if there will be a long excluded addresses list.
+                        </p>
+                    </li>
+                    <li>
+                        <h3>Out of Gas issue:</h3>
+                        <img src="./images/Gas-ssue2.png" alt="">
+                    </li>
+                </ul>
+                <p>The function _getCurrentSupply also uses the loop for evaluating total
+                    supply. It also could be aborted with OUT_OF_GAS exception if there
+                    will be a long excluded addresses list.
+                </p>
+                <h3>Recommendation: </h3>
+                <p>Use EnumerableSet instead of array or do not use long arrays.</p>
+            </div>
+        </section>
+        <!-- <section>
+            <h2>Conclusion</h2>
+            <p>Low-severity issues exist within smart contracts. Smart contracts are free from any critical or high-severity issues.</p>
+            <p>NOTE: Please check the disclaimer above and note, that audit makes no statements or warranties on business model, investment attractiveness or code sustainability. </p>
+
+        </section> -->
+    </main>
+  
+        
+  
+       
+    
+   
+    
+</body>
+</html>

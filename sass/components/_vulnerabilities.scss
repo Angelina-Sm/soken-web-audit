@@ -1,0 +1,20 @@
+.vulnerabilities__table {
+    // border: 1px solid green;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid #1b2360 ;
+    text-align: center;
+    
+}
+// .vulnerabilities-table__frame {
+//     border: 1px solid green;
+// }
+.vulnerabilities-table__subtitle {
+    background-color: #1b2360 ;
+    color: white;
+    height: 50px;
+}
+.vulnerabilities-table2__line{
+    background-color: #C0C0C0;
+}
