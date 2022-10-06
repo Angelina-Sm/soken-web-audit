@@ -42,7 +42,7 @@ img {
 }
 
 .subtitle {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16px;
   line-height: 1;
   letter-spacing: 0.03em;
@@ -284,4 +284,13 @@ img {
 
 .vulnerabilities-table2__line {
   background-color: #C0C0C0;
+}
+
+.security__break {
+  word-break: break-all;
+}
+
+.security__img {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }/*# sourceMappingURL=main.css.map */

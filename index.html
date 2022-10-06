@@ -443,29 +443,29 @@
                 <ul class="security__list list">
                     <li class="security__item"> 
                         <h3 class="security__subtitle subtitle">1) Volatile Code:</h3>
-                        <p class="security__text text">The return values of functions swapExactTokensForETHSupportingFeeOnTransferTokens and addLiquidityETH are not properly handled. </p>
+                        <p class="security__text text">The return values of functions <span class="security__break">swapExactTokensForETHSupportingFeeOnTransferTokens</span>  and addLiquidityETH are not properly handled. </p>
                         <h3 class="security__subtitle subtitle">Recommendation:</h3>
                         <p class="security__text text">We recommend using variables to receive the return value of the functions mentioned above and handle both success and failure cases if needed by the business logic.</p>
                     </li>
                     <li>
-                        <h3>Out of Gas issue:</h3>
-                        <img src="./images/Gas-issue.png" alt="">
-                        <p>The function includeInRewards() uses the loop to find and remove
+                        <h3 class="security__subtitle subtitle">Out of Gas issue:</h3>
+                        <img class="security__img" src="./images/Gas-issue.png" alt="">
+                        <p class="security__text text">The function includeInRewards() uses the loop to find and remove
                             addresses from the _excluded list. Function will be aborted with
                             OUT_OF_GAS exception if there will be a long excluded addresses list.
                         </p>
                     </li>
                     <li>
-                        <h3>Out of Gas issue:</h3>
-                        <img src="./images/Gas-ssue2.png" alt="">
+                        <h3 class="security__subtitle subtitle">Out of Gas issue:</h3>
+                        <img class="security__img" src="./images/Gas-ssue2.png" alt="">
                     </li>
                 </ul>
-                <p>The function _getCurrentSupply also uses the loop for evaluating total
+                <p class="security__text text" >The function _getCurrentSupply also uses the loop for evaluating total
                     supply. It also could be aborted with OUT_OF_GAS exception if there
                     will be a long excluded addresses list.
                 </p>
-                <h3>Recommendation: </h3>
-                <p>Use EnumerableSet instead of array or do not use long arrays.</p>
+                <h3 class="security__subtitle subtitle">Recommendation: </h3>
+                <p class="security__text text">Use EnumerableSet instead of array or do not use long arrays.</p>
             </div>
         </section>
         <!-- <section>
